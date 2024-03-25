@@ -1,0 +1,168 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    text-align: center;
+    padding: 1px;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+
+.calendar {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+.month-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--color);
+    color: #fff;
+}
+
+
+.month-indicator button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    font-size: 20px;
+}
+
+
+.day-of-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.date-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+
+.date-grid button {
+    position: relative;
+    border: 0;
+    height: 4.5ch; 
+    border-radius: 50%;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    font-size: 14px; 
+    padding: 10px; 
+}
+
+
+.date-grid button:hover,
+.date-grid button:focus {
+    outline: none;  /* rimuove il bordo predefinito sugli elementi con focus */
+    background-color: var(--color);  
+    color: #ffffff; 
+    cursor: pointer;
+}
+
+
+.date-grid button:first-child {
+    grid-column: 6; /* posiziona il primo pulsante "lunedì" nella sesta colonna */
+}
+
+
+main {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+
+footer {
+    background-color: var(--color);
+    padding: 12px;
+    text-align: center;
+    position: relative;
+    width: 100%; /* imposta larghezza del footer al 100% del corpo */
+    bottom: 0; 
+    left: 0; 
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }   
+    
+}
+
+
+@media (min-width: 768px) {
+    footer {
+        position: absolute;
+    }
+}
+
+
+body {
+    background-color: #000;
+    color: #833e3e;
+}
+
+
+:root{
+    --color: rgb(119, 0, 255);
+    --headfoot: rgb(0, 0, 0);
+}
+
+
+.date-grid button:active {
+    background-color: red;  /* colore click */
+}
+
+
+@keyframes rgbAnimation {
+    0% {
+        background-color: rgba(255, 0, 0, 1); 
+    }
+    25% {
+        background-color: rgba(255, 255, 0, 1);
+    }
+    50% {
+        background-color: rgba(0, 255, 0, 1);
+    }
+    75% {
+        background-color: rgba(0, 255, 255, 1);
+    }
+    100% {
+        background-color: rgba(0, 0, 255, 1);
+    }
+}
+
+
+header,
+footer {
+    color: var(--headfoot);
+    animation: rgbAnimation 15s ease infinite; /* "animazione" RGB con una durata di 15 sec e ripetizione infinita */
+}
+
